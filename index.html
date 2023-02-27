@@ -9,7 +9,7 @@
         background: yellow;
         position: absolute;
         top: 50%;
-        left: 50%;
+        right: 50%;
         margin: -50px 0 0 -50px;
 
         font-family: "Comic Sans MS", Papyrus, serif;
@@ -25,34 +25,28 @@
       }
 
       img {
-        display: inline-block;
-      }
-
-      .right {
         float: right;
+        margin: 3em;
+        animation: rotation 30s infinite linear;
       }
 
-      .left {
-        float: left;
-      }
-
-      .rotated.left {
-        transform: rotate(-90deg);
-      }
-
-      .rotated.right {
-        transform: rotate(90deg);
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
       }
 
     </style>
   </head>
   <body>
+  <a href="https://github.com/deepy/cursed.build">
+    <img decoding="async" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1">
+  </a>
   <div>
-    <a href="https://github.com/deepy/cursed.build"><img decoding="async" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1"></a>
-    <a href="https://github.com/deepy/cursed.build"><img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full right" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-    <p>Why do you have a 4GB dependency</p>
-    <a href="https://github.com/deepy/cursed.build"><img decoding="async" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" class="attachment-full size-full left rotated" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1"></a>
-    <a href="https://github.com/deepy/cursed.build"><img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full right rotated" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    <p>Tests don't have to be flaky</p>
   </div>
   </body>
 </html>
