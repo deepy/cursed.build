@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>    Home-lab Kubernetes cluster setup
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/theme/css/cid.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+            <div class="container">
+
+<header class="blog-header">
+    <h1><a href="">the build is cursed</a></h1>
+    <p></p>
+    <nav>
+        <a href="/">INDEX</a>
+        <a href="/archives">ARCHIVES</a>
+        <a href="/categories">CATEGORIES</a>
+    </nav>
+</header>
+
+    <div class="post">
+
+        <header>
+            <h1>Home-lab Kubernetes cluster setup</h1>
+            <p class="date">Written on <time datetime="2024-03-17T10:20:00+01:00">Mar 17, 2024</time></p>
+        </header>
+
+        <article>
+            <p>I recently<sup id="sf-home-lab-kubernetes-cluster-setup-1-back"><a href="#sf-home-lab-kubernetes-cluster-setup-1" class="simple-footnote" title="back in 2022 but time has no meaning">1</a></sup> found myself in a position where 
+my next job may be either working with Developer Productivity or Kubernetes, and since I don't trust a system
+further than I can throw it I immediately set out to build a cluster.</p>
+<p>And from past incidents I know that the moment I start using something it'll eventually become a production system,
+so really the only viable way forward is to over-engineer the solution. It's like that old saying "If you're not part of the 
+solution there's good money to be made in the problem"</p>
+<p>So I set out with some basic requirements:
+<em>It must be highly available</em>.
+I'm not going to assume any machine will function perfectly, and I'm not going to incur 
+downtime when I do upgrades. In fact, I'm going to be tinkering with this all the time, so the thing better work 
+just fine after I accidentally restart or reinstall the wrong computer.</p>
+<p><em>Persistent storage must be available and dynamically provisioned</em>. I'm absolutely not going to hand-craft any PVs.</p>
+<p><em>When it breaks it must be in new and exciting ways</em>. Because everyone loves a good puzzle.</p>
+<h1>Final setup</h1>
+<p>So attempting to meet all these basic requirements I ended up with a cluster that is:</p>
+<ul>
+<li>3 rack-mounted nodes with battery backups</li>
+<li>segmented network firewalled off from the rest</li>
+<li>dynamically provisioned storage</li>
+<li>load-balancer support</li>
+<li>automatic security upgrades</li>
+</ul>
+<p>And by that I mean I got 3 ThinkPad x230s that's hanging out in a closet on <a href="https://www.ikea.com/us/en/p/ivar-shelving-unit-with-bottle-racks-pine-gray-s39250601/">IKEA wine racks</a>
+supported through nfs-subdir-provisioner and my NAS. But really, that's pretty close.</p>
+<p>I don't have dual PSUs or dual NICs, but I got built-in battery and bluetooth support.
+Does your cluster support bluetooth? Didn't think so!</p><ol class="simple-footnotes"><li id="sf-home-lab-kubernetes-cluster-setup-1">back in 2022 but time has no meaning <a href="#sf-home-lab-kubernetes-cluster-setup-1-back" class="simple-footnote-back">↩</a></li></ol>
+        </article>
+
+        <footer>
+            <p>This entry is posted in <a href="/category/kubernetes.html">Kubernetes</a>.</p>
+        </footer>
+
+
+    </div>
+
+
+<footer class="blog-footer">
+
+    <ul class="nav">
+    </ul>
+
+    <p class="disclaimer">
+    Built with <a href="http://getpelican.com">Pelican</a>, and <a href="https://github.com/hdra/Pelican-Cid">Cid</a> theme.
+    </p>
+</footer>
+            </div>
+    </body>
+</html>
